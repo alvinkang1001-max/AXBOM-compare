@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RD BOM Compare Tool</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<header>
+  <h1>RD BOM Compare Tool</h1>
+  <p>RD Difference BOM ↔ Agile Released BOM verification</p>
+</header>
+<main>
+  <section class="panel">
+    <div class="filegrid">
+      <div class="filebox">
+        <h3>① RD Difference BOM</h3>
+        <input id="rdFile" type="file" accept=".xls,.xlsx,.xlsm" />
+        <div class="filename">No file selected</div>
+      </div>
+      <div class="filebox">
+        <h3>② Agile BOM Report</h3>
+        <input id="agileFile" type="file" accept=".xls,.xlsx,.xlsm" />
+        <div class="filename">No file selected</div>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="compareBtn">COMPARE</button>
+      <button id="exportBtn" class="secondary" disabled>Export Excel</button>
+    </div>
+    <div class="privacy">Files are parsed locally in your browser. This page does not upload BOM content to a server.</div>
+    <div id="error" class="error"></div>
+  </section>
+
+  <section id="summary" class="panel" hidden>
+    <div class="kpis">
+      <div class="kpi"><small>Target BOM</small><b id="target">-</b></div>
+      <div class="kpi"><small>Scope</small><b id="scope">-</b></div>
+      <div class="kpi"><small>RD Changes</small><b id="rdCount">0</b></div>
+      <div class="kpi"><small>PASS</small><b id="pass">0</b></div>
+      <div class="kpi"><small>FAIL</small><b id="fail">0</b></div>
+      <div class="kpi"><small>WARNING / OOS</small><b><span id="warning">0</span> / <span id="out_of_scope">0</span></b></div>
+    </div>
+    <div id="diagnostics" class="diagnostics"></div>
+  </section>
+
+  <section id="resultPanel" class="panel" hidden>
+    <div class="toolbar">
+      <h2>Compare Results</h2>
+      <label>Show
+        <select id="filter">
+          <option value="ALL">All</option>
+          <option value="FAIL">FAIL only</option>
+          <option value="WARNING">WARNING</option>
+          <option value="PASS">PASS</option>
+          <option value="OUT_OF_SCOPE">OUT OF SCOPE</option>
+        </select>
+      </label>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>No</th><th>Status</th><th>Action</th><th>Scope</th><th>Ref Des</th><th>RD PN</th><th>Agile PN</th><th>Qty</th><th>Note</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
