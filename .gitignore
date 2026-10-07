@@ -1,0 +1,12 @@
+# Company BOM / ECO data must never be committed
+*.xls
+*.xlsx
+*.xlsm
+*.csv
+samples/*
+!samples/README.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

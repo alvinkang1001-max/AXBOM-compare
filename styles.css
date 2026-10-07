@@ -1,0 +1,37 @@
+:root { font-family: Inter, "Segoe UI", Arial, sans-serif; color:#172033; background:#f4f6f8; }
+* { box-sizing:border-box; }
+body { margin:0; }
+header { background:#18243a; color:#fff; padding:28px 36px; }
+header h1 { margin:0 0 6px; font-size:28px; }
+header p { margin:0; opacity:.78; }
+main { max-width:1280px; margin:24px auto; padding:0 24px 40px; }
+.panel { background:#fff; border:1px solid #dfe4ea; border-radius:14px; padding:22px; margin-bottom:18px; box-shadow:0 3px 14px rgba(20,30,50,.04); }
+.filegrid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.filebox { border:1px dashed #aeb8c5; border-radius:12px; padding:18px; }
+.filebox h3 { margin:0 0 10px; }
+.filename { color:#627083; margin-top:8px; font-size:13px; }
+input[type=file] { width:100%; }
+.actions { display:flex; gap:12px; align-items:center; margin-top:18px; }
+button { border:0; border-radius:9px; padding:11px 18px; font-weight:700; cursor:pointer; background:#1e5eff; color:#fff; }
+button.secondary { background:#314057; }
+button:disabled { opacity:.45; cursor:not-allowed; }
+.error { color:#b42318; font-weight:700; margin-top:12px; }
+.kpis { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; }
+.kpi { background:#f7f9fb; border:1px solid #e5e9ef; border-radius:10px; padding:14px; }
+.kpi b { display:block; font-size:24px; margin-top:5px; }
+.kpi small { color:#647085; }
+.toolbar { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; }
+select { padding:9px 12px; border:1px solid #ccd4de; border-radius:8px; }
+.tablewrap { overflow:auto; border:1px solid #e0e5eb; border-radius:10px; }
+table { width:100%; border-collapse:collapse; font-size:13px; min-width:1050px; }
+th { position:sticky; top:0; background:#eef2f7; text-align:left; padding:10px; border-bottom:1px solid #d7dee8; }
+td { padding:9px 10px; border-bottom:1px solid #edf0f4; vertical-align:top; }
+.mono { font-family:Consolas, Menlo, monospace; }
+.badge { display:inline-block; padding:3px 8px; border-radius:999px; font-size:11px; font-weight:800; white-space:nowrap; }
+.badge.pass { background:#e7f6ec; color:#146c2e; }
+.badge.fail { background:#fde9e7; color:#b42318; }
+.badge.warning { background:#fff3d6; color:#8a5b00; }
+.badge.out_of_scope { background:#edf0f4; color:#596579; }
+.diagnostics { margin-top:12px; color:#6a7686; font-size:12px; }
+.privacy { margin-top:8px; color:#5d6a7c; font-size:13px; }
+@media(max-width:800px){ .filegrid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)} }
