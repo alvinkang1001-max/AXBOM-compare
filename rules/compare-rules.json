@@ -1,0 +1,19 @@
+{
+  "version": "0.1.0",
+  "compareKey": ["scope", "refDes", "partNumber"],
+  "hardCheck": ["partNumber", "refDes", "qty"],
+  "warningCheck": ["description"],
+  "ignoreFields": [
+    "cost",
+    "moq",
+    "countryOfOrigin",
+    "dchainStatus",
+    "certificate",
+    "weight",
+    "manufacturerDescription"
+  ],
+  "scope": {
+    "deriveFromAgileParentPartNumber": true,
+    "prefixPattern": "^(8[A-Z])"
+  }
+}
